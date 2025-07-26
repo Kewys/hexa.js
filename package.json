@@ -1,0 +1,17 @@
+{
+  "name": "hexajs-project",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "clean": "lerna clean -y && lerna run clean",
+    "lerna": "lerna"
+  },
+  "engines": {
+    "node": ">=22.X",
+    "pnpm": ">=10.X"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "lerna": "^8.2.3"
+  }
+}
