@@ -1,0 +1,34 @@
+{
+  "name": "@kewys/hexajs",
+  "version": "0.0.0",
+  "description": "The high-performance fullstack framework",
+  "author": "Hexa.js Team <dev@kewys.com>",
+  "homepage": "https://hexajs.dev",
+  "license": "MIT",
+  "main": "dist/hexajs.js",
+  "types": "dist/hexajs.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kewys/hexa.js.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "npx lerna run build --scope=hexajs && jest"
+  },
+  "bugs": {
+    "url": "https://github.com/Kewys/hexa.js/issues"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "jest": "^30.0.5"
+  }
+}
