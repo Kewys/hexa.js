@@ -1,6 +1,8 @@
 {
   "name": "@kewys/hexajs",
   "version": "0.0.0",
+  "private": true,
+  "type": "module",
   "description": "The high-performance fullstack framework",
   "author": "Hexa.js Team <dev@kewys.com>",
   "homepage": "https://hexajs.dev",
@@ -19,16 +21,25 @@
     "url": "git+https://github.com/Kewys/hexa.js.git"
   },
   "scripts": {
-    "build": "tsc",
-    "test": "npx lerna run build --scope=hexajs && jest"
+    "build": "tsc && vite build",
+    "test": "npx lerna run build --scope=hexajs && jest",
+    "dev": "vite",
+    "preview": "vite preview"
   },
   "bugs": {
     "url": "https://github.com/Kewys/hexa.js/issues"
   },
   "devDependencies": {
-    "typescript": "^5.8.3"
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@tailwindcss/vite": "^4.1.11",
+    "jest": "^30.0.5",
+    "typescript": "^5.8.3",
+    "vite": "^7.0.6"
   },
   "dependencies": {
-    "jest": "^30.0.5"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.11"
   }
 }
