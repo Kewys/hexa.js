@@ -1,45 +1,38 @@
 {
-  "name": "@kewys/hexajs",
-  "version": "0.0.0",
+  "name": "hexa",
   "private": true,
+  "version": "0.0.0",
   "type": "module",
-  "description": "The high-performance fullstack framework",
-  "author": "Hexa.js Team <dev@kewys.com>",
-  "homepage": "https://hexajs.dev",
-  "license": "MIT",
-  "main": "dist/hexajs.js",
-  "types": "dist/hexajs.d.ts",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
-  "files": [
-    "dist"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Kewys/hexa.js.git"
-  },
   "scripts": {
-    "build": "tsc && vite build",
-    "test": "npx lerna run build --scope=hexajs && jest",
-    "dev": "vite",
-    "preview": "vite preview"
-  },
-  "bugs": {
-    "url": "https://github.com/Kewys/hexa.js/issues"
-  },
-  "devDependencies": {
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
-    "@tailwindcss/vite": "^4.1.11",
-    "jest": "^30.0.5",
-    "typescript": "^5.8.3",
-    "vite": "^7.0.6"
+    "dev": "node server",
+    "dev-server": "tsx src/server/index.ts",
+    "build": "vite build && vite build --ssr src/entry-server.tsx",
+    "preview": "vite preview",
+    "start": "NODE_ENV=production node dist/server/index.js",
+    "server": "ts-node src/server/index.ts"
   },
   "dependencies": {
+    "@fastify/middie": "^9.0.3",
+    "@fastify/static": "^8.2.0",
+    "fastify": "^5.4.0",
+    "fastify-static": "^4.7.0",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "tailwindcss": "^4.1.11"
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.30.1",
+    "@types/node": "^24.1.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "eslint": "^9.30.1",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.3",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.35.1",
+    "vite": "^7.0.4"
   }
 }
