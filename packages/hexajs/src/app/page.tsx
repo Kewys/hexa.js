@@ -1,17 +1,23 @@
-import { useState } from "react";
-import reactLogo from "/src/assets/react.svg";
-
+import React, { useState } from "react";
 import "../styles/app.css";
 
 function App() {
+  console.log("here ---");
   const [count, setCount] = useState(0);
+  console.log("🚀 ~ App ~ count:", count);
 
   return (
     <>
       <div>
-        <a href="https://vite.dev" target="_blank"></a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+        <a href="https://vite.dev" target="_blank" rel="noreferrer">
+          <img src="/vite.svg" className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank" rel="noreferrer">
+          <img
+            src="src/assets/react.svg"
+            className="logo react"
+            alt="React logo"
+          />
         </a>
       </div>
       <h1>Vite + React</h1>
