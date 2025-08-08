@@ -17,8 +17,9 @@ app.get("/*", async (req, reply) => {
 
   const finalHtml = template
     .replace("<!--app-html-->", html)
-    .replace(/(src|href)="\/assets\//g, `$1="${s3BaseUrl}/assets/`)
-    .replace('href="/vite.svg"', `href="${s3BaseUrl}/vite.svg"`);
+    .replace(/(src|href)=["'](\/[^"']+)["']/g, (match, attr, path) => {
+      return `${attr}="${s3BaseUrl}${path}"`;
+    });
 
   reply.type("text/html").send(finalHtml);
 });

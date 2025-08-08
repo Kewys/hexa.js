@@ -10,11 +10,11 @@ function App() {
     <>
       <div>
         <a href="https://vite.dev" target="_blank" rel="noreferrer">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
+          <img src="/assets/vite.svg" className="logo" alt="Vite logo" />
         </a>
         <a href="https://react.dev" target="_blank" rel="noreferrer">
           <img
-            src="src/assets/react.svg"
+            src="/assets/react.svg"
             className="logo react"
             alt="React logo"
           />
