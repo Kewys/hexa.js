@@ -14,7 +14,7 @@ importers:
 
   packages/create-hexa-app:
     dependencies:
-      '@kewys/hexajs':
+      '@hexajs/hexa':
         specifier: workspace:*
         version: link:../hexajs
     devDependencies:

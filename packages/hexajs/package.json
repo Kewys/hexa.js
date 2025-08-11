@@ -1,7 +1,6 @@
 {
-  "name": "@kewys/hexajs",
+  "name": "@hexajs/hexa",
   "version": "0.0.0",
-  "private": true,
   "type": "module",
   "description": "The high-performance fullstack framework",
   "author": "Hexa.js Team <dev@kewys.com>",
