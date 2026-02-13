@@ -1,0 +1,46 @@
+{
+  "name": "hexa",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node server",
+    "build": "pnpm run build:client && pnpm run build:server && pnpm run build:lambda",
+    "build:client": "vite build --outDir dist/client",
+    "build:server": "vite build --ssr src/entry-server.jsx --outDir dist/server",
+    "build:lambda": "tsup lambda/handler.ts --format esm --target node22 --outDir dist/lambda --shims && mv dist/lambda/handler.js dist/lambda/handler.mjs",
+    "zip": "cd dist && zip -r ../deploy.zip .",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "deploy": "pnpm run build && pnpm run build:lambda && pnpm run zip",
+    "start": "NODE_ENV=production node dist/server/index.js",
+    "server": "ts-node src/server/index.ts"
+  },
+  "dependencies": {
+    "@fastify/middie": "^9.0.3",
+    "@fastify/static": "^8.2.0",
+    "archiver": "^7.0.1",
+    "aws-lambda-fastify": "^2.2.0",
+    "fastify": "^5.4.0",
+    "fastify-static": "^4.7.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.30.1",
+    "@types/node": "^24.1.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "eslint": "^9.30.1",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.3",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.35.1",
+    "vite": "^7.0.4"
+  }
+}
